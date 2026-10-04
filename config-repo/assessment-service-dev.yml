@@ -1,0 +1,18 @@
+# DEV profile: local Postgres, verbose SQL, Hibernate may not touch schema (Flyway owns it)
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/assessmentdb
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+services:
+  enrollment-url: http://localhost:8104
+  user-url: http://localhost:8101
+logging:
+  level:
+    com.learninghub: DEBUG

@@ -1,0 +1,45 @@
+# Usage:
+#   DEV :  docker compose --profile dev  up --build     (config: assessment-service-dev.yml)
+#   PROD:  docker compose --profile prod up --build     (config: assessment-service-prod.yml)
+# If Sanjay's config-server is running, set CONFIG_SERVER_URL; otherwise the bundled application-<profile>.yml is used.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5432:5432"]
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      retries: 10
+
+  assessment-service-dev:
+    profiles: ["dev"]
+    build: .
+    ports: ["8106:8106"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/assessmentdb   # inside Docker, localhost is the container itself
+      CONFIG_SERVER_URL: ${CONFIG_SERVER_URL:-http://config-server:8888}
+
+  assessment-service-prod:
+    profiles: ["prod"]
+    build: .
+    ports: ["8106:8106"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_HOST: postgres
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      CONFIG_SERVER_URL: ${CONFIG_SERVER_URL:-http://config-server:8888}
+
+volumes:
+  pgdata:

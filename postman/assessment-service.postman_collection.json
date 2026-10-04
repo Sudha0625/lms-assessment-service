@@ -1,0 +1,1529 @@
+{
+  "info": {
+    "name": "LearningHub - assessment-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8106"
+    },
+    {
+      "key": "assignmentAttemptId",
+      "value": "4"
+    },
+    {
+      "key": "createdId",
+      "value": "unit-3-quiz-junior"
+    }
+  ],
+  "item": [
+    {
+      "name": "0 Health",
+      "item": [
+        {
+          "name": "Health check",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/actuator/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "actuator",
+                "health"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1 Student (student1)",
+      "item": [
+        {
+          "name": "List assessments",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/list",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Summary",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "summary"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Performance",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/performance",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "performance"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Details (unit2-quiz)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit2-quiz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit2-quiz"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Questions (unit2-quiz)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit2-quiz/questions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit2-quiz",
+                "questions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Start attempt (unit2-quiz)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit2-quiz/start",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit2-quiz",
+                "start"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Autosave answers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit2-quiz/answers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit2-quiz",
+                "answers"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"answers\": {\n    \"1\": \"A\",\n    \"2\": \"B\"\n  }\n}"
+            }
+          }
+        },
+        {
+          "name": "Submit answers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", function () { pm.response.to.have.status(201); });",
+                  "pm.test(\"scored 3 of 3\", function () { pm.expect(pm.response.json().correct).to.eql(3); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit2-quiz/submit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit2-quiz",
+                "submit"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"answers\": {\n    \"1\": \"A\",\n    \"2\": \"B\",\n    \"3\": \"A\"\n  },\n  \"secondsTaken\": 600\n}"
+            }
+          }
+        },
+        {
+          "name": "Review (unit1-quiz)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit1-quiz/review",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit1-quiz",
+                "review"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Submit assignment (lab-report)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", function () { pm.response.to.have.status(201); });",
+                  "pm.collectionVariables.set(\"assignmentAttemptId\", pm.response.json().attemptId);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/lab-report/assignment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "lab-report",
+                "assignment"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Observations and analysis are in the attached report.\",\n  \"files\": [\n    {\n      \"name\": \"lab-report-student1.pdf\",\n      \"size\": 245760,\n      \"type\": \"application/pdf\"\n    }\n  ]\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2 Teacher",
+      "item": [
+        {
+          "name": "List (janderson)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/list",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Summary",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "summary"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Submissions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Submissions of one assessment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions?assessment=unit1-quiz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions?assessment=unit1-quiz"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Review one submission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Grade the assignment (ppatel)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"Graded\", function () { pm.expect(pm.response.json().status).to.eql(\"Graded\"); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "ppatel"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions/{{assignmentAttemptId}}/grade",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions",
+                "{{assignmentAttemptId}}",
+                "grade"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"points\": 88,\n  \"feedback\": \"Clear analysis; label the axes on graph 2.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "CREATE assessment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201\", function () { pm.response.to.have.status(201); });",
+                  "pm.collectionVariables.set(\"createdId\", pm.response.json().id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Unit 3 Quiz\",\n  \"subtitle\": \"Linear Functions\",\n  \"subject\": \"AP Pre Calculus\",\n  \"gradeLevel\": \"junior\",\n  \"type\": \"Quiz\",\n  \"dueAt\": \"2026-12-20T23:59:00\",\n  \"points\": 100,\n  \"attemptsAllowed\": 1,\n  \"timeLimitMinutes\": 30,\n  \"instructionsIntro\": \"Answer every question; one attempt.\",\n  \"instructionsSteps\": [\n    \"Read each question carefully.\",\n    \"Pick the best answer.\"\n  ],\n  \"color\": \"blue\",\n  \"questions\": [\n    {\n      \"text\": \"Which equation has slope 2 and y-intercept 1?\",\n      \"options\": [\n        {\n          \"key\": \"A\",\n          \"text\": \"y = 2x + 1\"\n        },\n        {\n          \"key\": \"B\",\n          \"text\": \"y = x + 2\"\n        },\n        {\n          \"key\": \"C\",\n          \"text\": \"y = 2x - 1\"\n        },\n        {\n          \"key\": \"D\",\n          \"text\": \"y = x - 1\"\n        }\n      ],\n      \"correct\": \"A\",\n      \"points\": 1,\n      \"topic\": \"Linear equations\",\n      \"section\": \"Multiple Choice\",\n      \"explanation\": \"Slope-intercept form is y = mx + b.\"\n    },\n    {\n      \"text\": \"What is the slope of the line through (0,0) and (2,6)?\",\n      \"options\": [\n        {\n          \"key\": \"A\",\n          \"text\": \"2\"\n        },\n        {\n          \"key\": \"B\",\n          \"text\": \"3\"\n        },\n        {\n          \"key\": \"C\",\n          \"text\": \"6\"\n        },\n        {\n          \"key\": \"D\",\n          \"text\": \"12\"\n        }\n      ],\n      \"correct\": \"B\",\n      \"points\": 1,\n      \"topic\": \"Slope\",\n      \"section\": \"Multiple Choice\"\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "READ assessment form",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments/{{createdId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments",
+                "{{createdId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "UPDATE assessment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"Title updated\", function () { pm.expect(pm.response.json().title).to.eql(\"Unit 3 Quiz (Revised)\"); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments/{{createdId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments",
+                "{{createdId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Unit 3 Quiz (Revised)\",\n  \"subtitle\": \"Linear Functions\",\n  \"subject\": \"AP Pre Calculus\",\n  \"gradeLevel\": \"junior\",\n  \"type\": \"Quiz\",\n  \"dueAt\": \"2026-12-20T23:59:00\",\n  \"points\": 100,\n  \"attemptsAllowed\": 1,\n  \"timeLimitMinutes\": 20,\n  \"instructionsIntro\": \"Answer every question; one attempt.\",\n  \"instructionsSteps\": [\n    \"Read each question carefully.\",\n    \"Pick the best answer.\"\n  ],\n  \"color\": \"blue\",\n  \"questions\": [\n    {\n      \"text\": \"Which equation has slope 2 and y-intercept 1?\",\n      \"options\": [\n        {\n          \"key\": \"A\",\n          \"text\": \"y = 2x + 1\"\n        },\n        {\n          \"key\": \"B\",\n          \"text\": \"y = x + 2\"\n        },\n        {\n          \"key\": \"C\",\n          \"text\": \"y = 2x - 1\"\n        },\n        {\n          \"key\": \"D\",\n          \"text\": \"y = x - 1\"\n        }\n      ],\n      \"correct\": \"A\",\n      \"points\": 1,\n      \"topic\": \"Linear equations\",\n      \"section\": \"Multiple Choice\",\n      \"explanation\": \"Slope-intercept form is y = mx + b.\"\n    },\n    {\n      \"text\": \"What is the slope of the line through (0,0) and (2,6)?\",\n      \"options\": [\n        {\n          \"key\": \"A\",\n          \"text\": \"2\"\n        },\n        {\n          \"key\": \"B\",\n          \"text\": \"3\"\n        },\n        {\n          \"key\": \"C\",\n          \"text\": \"6\"\n        },\n        {\n          \"key\": \"D\",\n          \"text\": \"12\"\n        }\n      ],\n      \"correct\": \"B\",\n      \"points\": 1,\n      \"topic\": \"Slope\",\n      \"section\": \"Multiple Choice\"\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE assessment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 204\", function () { pm.response.to.have.status(204); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments/{{createdId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments",
+                "{{createdId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "READ after delete (gone)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", function () { pm.response.to.have.status(404); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments/{{createdId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments",
+                "{{createdId}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3 Admin",
+      "item": [
+        {
+          "name": "List (all teachers)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "admin1"
+              },
+              {
+                "key": "X-Role",
+                "value": "admin"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/list",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Summary",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "admin1"
+              },
+              {
+                "key": "X-Role",
+                "value": "admin"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "summary"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Performance",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "admin1"
+              },
+              {
+                "key": "X-Role",
+                "value": "admin"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/performance",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "performance"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Submissions (every assessment)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "admin1"
+              },
+              {
+                "key": "X-Role",
+                "value": "admin"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Review any submission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "admin1"
+              },
+              {
+                "key": "X-Role",
+                "value": "admin"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Read any assessment form",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200\", function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "admin1"
+              },
+              {
+                "key": "X-Role",
+                "value": "admin"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments/unit2-quiz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments",
+                "unit2-quiz"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 Negative cases",
+      "item": [
+        {
+          "name": "Student cannot grade (403)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", function () { pm.response.to.have.status(403); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions/1/grade",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions",
+                "1",
+                "grade"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"points\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Student cannot create (403)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", function () { pm.response.to.have.status(403); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Unit 3 Quiz\",\n  \"subtitle\": \"Linear Functions\",\n  \"subject\": \"AP Pre Calculus\",\n  \"gradeLevel\": \"junior\",\n  \"type\": \"Quiz\",\n  \"dueAt\": \"2026-12-20T23:59:00\",\n  \"points\": 100,\n  \"attemptsAllowed\": 1,\n  \"timeLimitMinutes\": 30,\n  \"instructionsIntro\": \"Answer every question; one attempt.\",\n  \"instructionsSteps\": [\n    \"Read each question carefully.\",\n    \"Pick the best answer.\"\n  ],\n  \"color\": \"blue\",\n  \"questions\": [\n    {\n      \"text\": \"Which equation has slope 2 and y-intercept 1?\",\n      \"options\": [\n        {\n          \"key\": \"A\",\n          \"text\": \"y = 2x + 1\"\n        },\n        {\n          \"key\": \"B\",\n          \"text\": \"y = x + 2\"\n        },\n        {\n          \"key\": \"C\",\n          \"text\": \"y = 2x - 1\"\n        },\n        {\n          \"key\": \"D\",\n          \"text\": \"y = x - 1\"\n        }\n      ],\n      \"correct\": \"A\",\n      \"points\": 1,\n      \"topic\": \"Linear equations\",\n      \"section\": \"Multiple Choice\",\n      \"explanation\": \"Slope-intercept form is y = mx + b.\"\n    },\n    {\n      \"text\": \"What is the slope of the line through (0,0) and (2,6)?\",\n      \"options\": [\n        {\n          \"key\": \"A\",\n          \"text\": \"2\"\n        },\n        {\n          \"key\": \"B\",\n          \"text\": \"3\"\n        },\n        {\n          \"key\": \"C\",\n          \"text\": \"6\"\n        },\n        {\n          \"key\": \"D\",\n          \"text\": \"12\"\n        }\n      ],\n      \"correct\": \"B\",\n      \"points\": 1,\n      \"topic\": \"Slope\",\n      \"section\": \"Multiple Choice\"\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Teacher cannot grade another teacher's assessment (403)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403\", function () { pm.response.to.have.status(403); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/submissions/{{assignmentAttemptId}}/grade",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "submissions",
+                "{{assignmentAttemptId}}",
+                "grade"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"points\": 50\n}"
+            }
+          }
+        },
+        {
+          "name": "Validation error: missing title (400)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400\", function () { pm.response.to.have.status(400); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "janderson"
+              },
+              {
+                "key": "X-Role",
+                "value": "teacher"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/teacher/assessments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "teacher",
+                "assessments"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": \"AP Pre Calculus\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Unknown assessment (404)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", function () { pm.response.to.have.status(404); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/does-not-exist",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "does-not-exist"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Review with no finished attempt (404)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 404\", function () { pm.response.to.have.status(404); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/lab-safety/review",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "lab-safety",
+                "review"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Start again: no attempts left (409)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", function () { pm.response.to.have.status(409); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/unit2-quiz/start",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "unit2-quiz",
+                "start"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Start an assignment (409)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409\", function () { pm.response.to.have.status(409); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Username",
+                "value": "student1"
+              },
+              {
+                "key": "X-Role",
+                "value": "student"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/assessment/lab-report/start",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "assessment",
+                "lab-report",
+                "start"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
